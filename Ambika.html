@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ambika Sweet - Pure Taste of Tradition. Premium Indian sweets, snacks, gift boxes and festival specials in Pune.">
+<title>Ambika Sweet – Pure Taste of Tradition</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9922A;--gold-light:#E8B84B;--gold-pale:#F5DFA0;--saffron:#E8680A;--cream:#FDF6E9;--cream-dark:#F5E8C8;--brown:#6B3E26;--text-dark:#2A1A0E;--text-mid:#5A3E2B;--text-light:#8B6347;--bg:#FDF6E9;--bg-card:#FFFDF7;--bg-section:#FAF0DA;--border:#E8D5AA;--shadow:rgba(201,146,42,0.18);--shadow-dark:rgba(42,26,14,0.14);--nav-bg:rgba(253,246,233,0.96)}
+[data-theme="dark"]{--gold:#E8B84B;--gold-light:#F5D070;--gold-pale:#4A3510;--saffron:#F28C3A;--cream:#1E120A;--cream-dark:#2A1A0E;--brown:#C4956A;--text-dark:#F5E8C8;--text-mid:#D4B896;--text-light:#A88B6A;--bg:#1A0F07;--bg-card:#221408;--bg-section:#1E1208;--border:#3A2510;--shadow:rgba(232,184,75,0.12);--shadow-dark:rgba(0,0,0,0.4);--nav-bg:rgba(26,15,7,0.97)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-dark);overflow-x:hidden;transition:background .4s,color .4s}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}input,select,textarea{font-family:inherit}.hidden{display:none!important}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text-dark);margin-bottom:1rem}
+.section-subtitle{color:var(--text-light);max-width:540px;line-height:1.7;font-size:1.05rem}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.section{padding:5rem 0}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header .section-subtitle{margin:0 auto}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;letter-spacing:.02em;transition:all .3s ease;position:relative;overflow:hidden}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--saffron));color:#fff;box-shadow:0 4px 20px var(--shadow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--shadow)}
+.btn-outline{border:2px solid var(--gold);color:var(--gold);background:transparent}
+.btn-outline:hover{background:var(--gold);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--brown);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-sm{padding:.55rem 1.3rem;font-size:.85rem}
+/* NAV */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
+.navbar.scrolled{box-shadow:0 4px 30px var(--shadow-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1300px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:.7rem;cursor:pointer}
+.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--saffron));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 3px 12px var(--shadow)}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--text-dark)}
+.logo-text span{color:var(--gold)}
+.logo-tagline{font-size:.65rem;letter-spacing:.15em;color:var(--text-light);text-transform:uppercase;display:block;margin-top:-4px}
+.nav-links{display:flex;align-items:center;gap:.3rem}
+.nav-links a{padding:.5rem .9rem;border-radius:8px;font-size:.9rem;font-weight:500;color:var(--text-mid);transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);background:var(--gold-pale)}
+.nav-actions{display:flex;align-items:center;gap:.7rem}
+.icon-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-section);color:var(--text-mid);transition:all .2s;font-size:1.1rem;position:relative;cursor:pointer}
+.icon-btn:hover{background:var(--gold);color:#fff}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--saffron);color:#fff;width:18px;height:18px;border-radius:50%;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-dark);border-radius:2px;transition:all .3s}
+.theme-toggle{position:relative;width:52px;height:26px}
+.theme-toggle input{opacity:0;width:0;height:0;position:absolute}
+.toggle-track{position:absolute;inset:0;background:var(--border);border-radius:50px;cursor:pointer;transition:background .3s}
+.theme-toggle input:checked~.toggle-track{background:var(--gold)}
+.toggle-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .3s;display:flex;align-items:center;justify-content:center;font-size:.65rem}
+.theme-toggle input:checked~.toggle-track .toggle-thumb{transform:translateX(26px)}
+.nav-mobile{display:block;position:fixed;top:70px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.5rem;transform:translateY(-110%);transition:transform .3s ease;z-index:999}
+.nav-mobile.open{transform:translateY(0)}
+.nav-mobile a{display:block;padding:.9rem 0;font-size:1rem;font-weight:500;color:var(--text-mid);border-bottom:1px solid var(--border)}
+.nav-mobile a:last-child{border-bottom:none}
+.nav-mobile a:hover,.nav-mobile a.active{color:var(--gold)}
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,#3D1C02 0%,#6B3E26 40%,#8B5A2B 70%,#C9922A 100%);position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 30%,rgba(255,200,50,.08) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(232,104,10,.1) 0%,transparent 50%)}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;max-width:1200px;margin:0 auto;padding:8rem 1.5rem 4rem}
+.hero-text{color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.5rem;backdrop-filter:blur(10px)}
+.hero h1{font-size:clamp(2.5rem,5.5vw,4rem);line-height:1.15;margin-bottom:.5rem;color:#fff}
+.hero h1 .accent{display:block;background:linear-gradient(90deg,var(--gold-light),#F28C3A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:1.4rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:1.5rem}
+.hero-desc{color:rgba(255,255,255,.75);line-height:1.75;font-size:1.05rem;margin-bottom:2.5rem;max-width:420px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15)}
+.hero-stat .num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold-light)}
+.hero-stat .label{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.2rem}
+.hero-visual{position:relative}
+.hero-img-frame{position:relative;border-radius:30% 70% 70% 30%/30% 30% 70% 70%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:morphShape 8s ease-in-out infinite}
+@keyframes morphShape{0%,100%{border-radius:30% 70% 70% 30%/30% 30% 70% 70%}50%{border-radius:70% 30% 30% 70%/70% 70% 30% 30%}}
+.hero-img-frame img{width:100%;height:520px;object-fit:cover}
+.hero-float-card{position:absolute;background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:1rem 1.3rem;color:#fff}
+.hero-float-card.fresh{top:10%;right:-30px;animation:floatCard 4s ease-in-out infinite}
+.hero-float-card.rating{bottom:15%;left:-20px;animation:floatCard 4s ease-in-out infinite 2s}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-label{font-size:.7rem;opacity:.75;text-transform:uppercase;letter-spacing:.1em}
+.float-value{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-top:.2rem}
+.stars-row{color:var(--gold-light);letter-spacing:2px;margin-top:.2rem;font-size:.85rem}
+/* TICKER */
+.ticker{background:linear-gradient(90deg,var(--gold),var(--saffron));padding:.65rem 0;overflow:hidden}
+.ticker-inner{display:flex;gap:3rem;animation:ticker 28s linear infinite;white-space:nowrap;width:max-content}
+.ticker-inner span{color:#fff;font-size:.85rem;font-weight:600;letter-spacing:.05em}
+.ticker-inner span::before{content:'✦ ';opacity:.7}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* FESTIVAL BANNER */
+.festival-banner{background:linear-gradient(135deg,var(--saffron) 0%,var(--gold) 50%,#D4A017 100%);padding:1.2rem;overflow:hidden}
+.festival-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.festival-tag{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;padding:.3rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.festival-text{color:#fff;text-align:center;flex:1}
+.festival-text strong{font-family:'Playfair Display',serif;font-size:1.1rem}
+.festival-text span{font-size:.9rem;opacity:.9;margin-left:.5rem}
+.festival-countdown{display:flex;gap:.8rem;align-items:center}
+.cd-unit{text-align:center;color:#fff}
+.cd-num{background:rgba(255,255,255,.2);border-radius:8px;padding:.3rem .6rem;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;display:block;min-width:40px}
+.cd-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;opacity:.8;margin-top:.2rem}
+.cd-sep{font-size:1.2rem;font-weight:700;margin-top:-6px;opacity:.7}
+/* FEATURES */
+.features-strip{background:var(--bg-card);border-bottom:1px solid var(--border);padding:2.5rem 0}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.feature-item{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:12px;transition:all .3s}
+.feature-item:hover{background:var(--bg-section);transform:translateY(-2px)}
+.feature-icon{width:52px;height:52px;flex-shrink:0;background:linear-gradient(135deg,var(--gold-pale),var(--cream-dark));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.feature-title{font-weight:600;font-size:.95rem;color:var(--text-dark);margin-bottom:.2rem}
+.feature-desc{font-size:.8rem;color:var(--text-light);line-height:1.4}
+/* PRODUCTS */
+.search-bar{display:flex;align-items:center;background:var(--bg-card);border:2px solid var(--border);border-radius:50px;padding:.6rem 1.2rem;max-width:500px;margin:0 auto 3rem;transition:border-color .2s}
+.search-bar:focus-within{border-color:var(--gold)}
+.search-bar input{flex:1;border:none;outline:none;background:none;font-size:.95rem;color:var(--text-dark);padding:0 .8rem}
+.search-bar input::placeholder{color:var(--text-light)}
+.search-icon{color:var(--gold);font-size:1.1rem}
+.category-tabs{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
+.cat-tab{padding:.6rem 1.4rem;border-radius:50px;font-size:.9rem;font-weight:500;border:2px solid var(--border);color:var(--text-mid);background:var(--bg-card);transition:all .25s;cursor:pointer}
+.cat-tab:hover{border-color:var(--gold);color:var(--gold)}
+.cat-tab.active{background:linear-gradient(135deg,var(--gold),var(--saffron));border-color:transparent;color:#fff;box-shadow:0 4px 15px var(--shadow)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.8rem}
+.product-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .35s ease;position:relative}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px var(--shadow),0 4px 20px var(--shadow-dark);border-color:var(--gold)}
+.product-img{position:relative;overflow:hidden;height:220px;background:linear-gradient(135deg,var(--cream-dark),var(--gold-pale))}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.product-card:hover .product-img img{transform:scale(1.08)}
+.product-badge{position:absolute;top:12px;left:12px;padding:.25rem .7rem;border-radius:50px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.badge-bestseller{background:var(--gold);color:#fff}
+.badge-new{background:var(--saffron);color:#fff}
+.badge-festival{background:#D4460B;color:#fff}
+.badge-veg{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:4px;border:2px solid #28a745;display:flex;align-items:center;justify-content:center;background:#fff}
+.badge-veg::after{content:'';width:10px;height:10px;border-radius:50%;background:#28a745;display:block}
+.product-wishlist{position:absolute;bottom:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s;opacity:0;cursor:pointer}
+.product-card:hover .product-wishlist{opacity:1}
+.product-wishlist.liked{opacity:1;background:var(--saffron);color:#fff}
+.product-body{padding:1.3rem}
+.product-category{font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:.4rem}
+.product-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text-dark);margin-bottom:.4rem}
+.product-desc{font-size:.82rem;color:var(--text-light);line-height:1.5;margin-bottom:.8rem}
+.product-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+.stars{color:var(--gold);font-size:.8rem}
+.review-count{font-size:.75rem;color:var(--text-light)}
+.product-footer{display:flex;align-items:center;justify-content:space-between}
+.product-price{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--brown)}
+.product-price .unit{font-size:.75rem;font-weight:400;color:var(--text-light)}
+.product-price-old{text-decoration:line-through;font-size:.85rem;color:var(--text-light)}
+.add-cart-btn{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--saffron));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s;box-shadow:0 3px 12px var(--shadow);cursor:pointer}
+.add-cart-btn:hover{transform:scale(1.15)}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-images{position:relative;height:520px}
+.about-img-main{width:75%;height:380px;object-fit:cover;border-radius:24px;box-shadow:0 20px 60px var(--shadow-dark);position:absolute;top:0;left:0}
+.about-img-accent{width:58%;height:260px;object-fit:cover;border-radius:20px;box-shadow:0 15px 40px var(--shadow-dark);position:absolute;bottom:0;right:0;border:4px solid var(--bg)}
+.about-float{position:absolute;top:50%;left:65%;transform:translateY(-50%);background:linear-gradient(135deg,var(--gold),var(--saffron));color:#fff;border-radius:20px;padding:1.2rem 1.5rem;text-align:center;box-shadow:0 10px 30px var(--shadow);z-index:2;animation:floatCard 5s ease-in-out infinite}
+.about-float .big{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;display:block}
+.about-float .small{font-size:.8rem;opacity:.9}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.value-item{background:var(--bg-section);border:1px solid var(--border);border-radius:14px;padding:1.2rem;transition:all .3s}
+.value-item:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 25px var(--shadow)}
+.value-icon{font-size:1.8rem;margin-bottom:.7rem}
+.value-title{font-weight:600;color:var(--text-dark);margin-bottom:.3rem;font-size:.95rem}
+.value-text{font-size:.82rem;color:var(--text-light);line-height:1.5}
+/* TESTIMONIALS */
+.testimonials{background:var(--bg-section)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:all .3s;position:relative}
+.testimonial-card:hover{transform:translateY(-5px);box-shadow:0 15px 45px var(--shadow);border-color:var(--gold)}
+.testimonial-text{font-size:.95rem;line-height:1.75;color:var(--text-mid);margin-bottom:1.5rem;padding-top:1rem}
+.testimonial-author{display:flex;align-items:center;gap:.8rem}
+.author-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--saffron));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;font-family:'Playfair Display',serif}
+.author-name{font-weight:600;color:var(--text-dark);font-size:.95rem}
+.author-loc{font-size:.8rem;color:var(--text-light)}
+.testimonial-stars{color:var(--gold);margin-bottom:.8rem;font-size:.9rem}
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:1rem}
+.gallery-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(42,26,14,.55);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem}
+.gallery-item:hover .gallery-overlay{opacity:1}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:all .3s}
+.contact-card:hover{border-color:var(--gold);transform:translateX(5px);box-shadow:0 8px 25px var(--shadow)}
+.contact-card-icon{width:46px;height:46px;flex-shrink:0;background:linear-gradient(135deg,var(--gold-pale),var(--cream-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.contact-card-title{font-weight:600;color:var(--text-dark);margin-bottom:.3rem}
+.contact-card-detail{color:var(--text-light);font-size:.9rem;line-height:1.6}
+.map-frame{border-radius:20px;overflow:hidden;border:2px solid var(--border);height:400px}
+.map-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--bg-section),var(--cream-dark));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;color:var(--text-light)}
+.map-placeholder .map-icon{font-size:3rem}
+.hours-table{margin-top:1rem}
+.hours-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.88rem}
+.hours-row:last-child{border-bottom:none}
+.hours-row .day{color:var(--text-mid);font-weight:500}
+.hours-row .time{color:var(--gold);font-weight:600}
+/* ORDER */
+.order-section{background:var(--bg-section)}
+.order-form{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:3rem;max-width:700px;margin:0 auto;box-shadow:0 10px 50px var(--shadow-dark)}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-weight:500;color:var(--text-dark);margin-bottom:.5rem;font-size:.9rem}
+.form-input{width:100%;padding:.85rem 1.2rem;border:2px solid var(--border);border-radius:12px;background:var(--bg);color:var(--text-dark);font-size:.95rem;transition:border-color .2s;outline:none}
+.form-input:focus{border-color:var(--gold)}
+.form-input::placeholder{color:var(--text-light)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.payment-options{display:flex;gap:1rem;flex-wrap:wrap}
+.payment-option{flex:1;min-width:130px;border:2px solid var(--border);border-radius:12px;padding:1rem;cursor:pointer;display:flex;align-items:center;gap:.7rem;transition:all .2s}
+.payment-option:hover{border-color:var(--gold)}
+.payment-option input{display:none}
+.payment-option.selected{border-color:var(--gold);background:var(--gold-pale)}
+.payment-icon{font-size:1.4rem}
+.payment-label{font-weight:500;font-size:.9rem;color:var(--text-dark)}
+.order-summary{background:var(--bg-section);border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:2rem}
+.order-summary-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:.9rem;border-bottom:1px solid var(--border)}
+.order-summary-row:last-child{border-bottom:none;font-weight:700;color:var(--gold);font-size:1rem;margin-top:.3rem;padding-top:.7rem}
+/* CAROUSEL */
+.scroll-carousel{overflow:hidden;position:relative}
+.scroll-track{display:flex;gap:1.5rem;animation:scrollCar 30s linear infinite;width:max-content}
+.scroll-track:hover{animation-play-state:paused}
+@keyframes scrollCar{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mini-product{width:200px;flex-shrink:0;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s}
+.mini-product:hover{transform:translateY(-5px);box-shadow:0 12px 35px var(--shadow);border-color:var(--gold)}
+.mini-product-img{height:150px;overflow:hidden}
+.mini-product-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.mini-product:hover .mini-product-img img{transform:scale(1.08)}
+.mini-product-body{padding:.9rem}
+.mini-product-name{font-weight:600;font-size:.9rem;color:var(--text-dark);margin-bottom:.3rem}
+.mini-product-price{color:var(--gold);font-weight:700;font-size:.95rem}
+/* CART */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1200;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--bg-card);z-index:1201;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-10px 0 50px var(--shadow-dark)}
+.cart-sidebar.open{transform:translateX(0)}
+.cart-header{padding:1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text-dark)}
+.cart-body{flex:1;overflow-y:auto;padding:1.5rem}
+.cart-empty{text-align:center;padding:3rem;color:var(--text-light)}
+.cart-empty .empty-icon{font-size:3.5rem;margin-bottom:1rem;display:block}
+.cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.cart-item:last-child{border-bottom:none}
+.cart-item-img{width:70px;height:70px;border-radius:12px;overflow:hidden;flex-shrink:0;background:var(--bg-section)}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-info{flex:1}
+.cart-item-name{font-weight:600;color:var(--text-dark);font-size:.9rem;margin-bottom:.3rem}
+.cart-item-price{color:var(--gold);font-weight:700;font-size:.95rem}
+.cart-item-qty{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.qty-btn{width:26px;height:26px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:var(--text-mid);transition:all .2s;cursor:pointer}
+.qty-btn:hover{border-color:var(--gold);color:var(--gold)}
+.qty-num{font-weight:600;min-width:20px;text-align:center;font-size:.9rem}
+.cart-item-remove{color:var(--text-light);font-size:1.1rem;cursor:pointer;align-self:flex-start;transition:color .2s;padding:.2rem}
+.cart-item-remove:hover{color:#E53E3E}
+.cart-footer{padding:1.5rem;border-top:1px solid var(--border)}
+.cart-total{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;color:var(--text-dark)}
+.cart-total span:last-child{color:var(--gold)}
+/* POPUP */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.popup-overlay.open{opacity:1;pointer-events:all}
+.popup-box{background:var(--bg-card);border-radius:24px;overflow:hidden;max-width:520px;width:100%;position:relative;transform:scale(.9);transition:transform .3s;box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.popup-overlay.open .popup-box{transform:scale(1)}
+.popup-banner{background:linear-gradient(135deg,var(--saffron),var(--gold));padding:2.5rem;text-align:center;color:#fff}
+.popup-banner .discount{font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;line-height:1}
+.popup-banner p{opacity:.9;font-size:1.1rem;margin-top:.3rem}
+.popup-body{padding:2rem;text-align:center}
+.popup-body h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text-dark);margin-bottom:.5rem}
+.popup-body p{color:var(--text-light);margin-bottom:1.5rem;font-size:.95rem}
+.popup-code{background:var(--bg-section);border:2px dashed var(--gold);border-radius:12px;padding:.8rem 1.5rem;font-size:1.3rem;font-weight:700;color:var(--gold);letter-spacing:.15em;margin-bottom:1.5rem;display:inline-block}
+.popup-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
+.popup-close:hover{background:rgba(255,255,255,.35)}
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--text-dark);color:#fff;padding:.9rem 1.8rem;border-radius:50px;font-size:.9rem;font-weight:500;z-index:3000;transition:transform .4s cubic-bezier(.4,0,.2,1);white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.3);display:flex;align-items:center;gap:.6rem}
+.toast.show{transform:translateX(-50%) translateY(0)}
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+.page-hero{padding:9rem 0 5rem;background:linear-gradient(135deg,var(--brown) 0%,var(--text-dark) 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+.page-hero h1{font-size:clamp(2rem,4vw,3rem);color:#fff;position:relative}
+.page-hero p{color:rgba(255,255,255,.7);margin-top:.8rem;font-size:1.05rem;position:relative}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.6);position:relative}
+.breadcrumb span{color:var(--gold-light)}
+/* FOOTER */
+.footer{background:var(--text-dark);color:rgba(255,255,255,.8);padding:4rem 0 2rem;position:relative;overflow:hidden}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;position:relative}
+.footer-desc{font-size:.88rem;line-height:1.75;color:rgba(255,255,255,.6);margin:1rem 0 1.5rem}
+.social-links{display:flex;gap:.7rem}
+.social-link{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s}
+.social-link:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
+.footer-heading{font-family:'Playfair Display',serif;color:#fff;font-size:1.05rem;margin-bottom:1.3rem}
+.footer-links{display:flex;flex-direction:column;gap:.6rem}
+.footer-links a{color:rgba(255,255,255,.6);font-size:.88rem;transition:color .2s}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-contact-item{display:flex;gap:.7rem;font-size:.88rem;color:rgba(255,255,255,.6);margin-bottom:.8rem;align-items:flex-start}
+.footer-contact-item span:first-child{color:var(--gold-light);flex-shrink:0;margin-top:1px}
+.footer-bottom{max-width:1200px;margin:0 auto;padding:1.5rem 1.5rem 0;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.45);position:relative;flex-wrap:wrap;gap:.8rem}
+/* FLOAT BTNS */
+.float-actions{position:fixed;bottom:2rem;right:2rem;display:flex;flex-direction:column;gap:.8rem;z-index:900}
+.float-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 5px 20px rgba(0,0,0,.25);transition:all .3s;cursor:pointer}
+.float-btn:hover{transform:scale(1.1) translateY(-3px)}
+.float-wa{background:#25D366;color:#fff}
+.float-call{background:var(--gold);color:#fff}
+.float-top{background:var(--bg-card);color:var(--gold);border:2px solid var(--gold)}
+/* ANIMATE */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeInUp .6s ease forwards;opacity:0}
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .features-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-visual{display:none}
+  .hero-stats{justify-content:center}
+  .hero-actions{justify-content:center}
+  .hero-desc{margin:0 auto 2.5rem}
+  .about-grid{grid-template-columns:1fr}
+  .about-images{height:300px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .gallery-item.wide{grid-column:span 1}
+  .form-row{grid-template-columns:1fr}
+  .hero-float-card{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .festival-countdown{display:none}
+  .festival-inner{justify-content:center}
+  .order-form{padding:2rem 1.2rem}
+  .values-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:1.5rem}
+  .float-actions{bottom:1rem;right:1rem}
+  .float-btn{width:46px;height:46px;font-size:1.2rem}
+  .section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- DISCOUNT POPUP -->
+<div class="popup-overlay" id="discountPopup">
+  <div class="popup-box">
+    <div class="popup-close" onclick="closePopup()">✕</div>
+    <div class="popup-banner">
+      <div class="discount">20% OFF</div>
+      <p>On your first online order!</p>
+    </div>
+    <div class="popup-body">
+      <h3>Welcome to Ambika Sweet! 🎉</h3>
+      <p>Use the code below at checkout for 20% off your first order. Valid on all sweets &amp; snacks above ₹500.</p>
+      <div class="popup-code">WELCOME20</div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="closePopup()">Claim Offer &amp; Shop Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toastMsg">Added to cart!</span></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="navigateTo('home')">
+      <div class="logo-icon">🪔</div>
+      <div>
+        <div class="logo-text"><span>Ambika</span> Sweet</div>
+        <span class="logo-tagline">Pure Taste of Tradition</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active" onclick="navigateTo('home');return false">Home</a>
+      <a href="#" onclick="navigateTo('about');return false">About</a>
+      <a href="#" onclick="navigateTo('products');return false">Products</a>
+      <a href="#" onclick="navigateTo('gallery');return false">Gallery</a>
+      <a href="#" onclick="navigateTo('order');return false">Order Online</a>
+      <a href="#" onclick="navigateTo('testimonials');return false">Reviews</a>
+      <a href="#" onclick="navigateTo('contact');return false">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <label class="theme-toggle" title="Toggle dark mode">
+        <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+        <div class="toggle-track"><div class="toggle-thumb" id="themeIcon">🌙</div></div>
+      </label>
+      <div class="icon-btn" onclick="openCart()" title="Cart">
+        🛒<span class="cart-badge" id="cartBadge">0</span>
+      </div>
+      <div class="hamburger" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="#" onclick="navigateTo('home');closeMobileNav();return false">🏠 Home</a>
+  <a href="#" onclick="navigateTo('about');closeMobileNav();return false">📖 About Us</a>
+  <a href="#" onclick="navigateTo('products');closeMobileNav();return false">🍬 Products</a>
+  <a href="#" onclick="navigateTo('gallery');closeMobileNav();return false">🖼️ Gallery</a>
+  <a href="#" onclick="navigateTo('order');closeMobileNav();return false">📦 Order Online</a>
+  <a href="#" onclick="navigateTo('testimonials');closeMobileNav();return false">⭐ Reviews</a>
+  <a href="#" onclick="navigateTo('contact');closeMobileNav();return false">📍 Contact</a>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <div class="icon-btn" onclick="closeCart()">✕</div>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty"><span class="empty-icon">🛒</span><p style="font-weight:600;color:var(--text-dark);margin-bottom:.4rem">Your cart is empty</p><p style="font-size:.85rem">Add some delicious sweets!</p></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="proceedToOrder()">Proceed to Order →</button>
+    <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.7rem" onclick="closeCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ══════════ PAGE: HOME ══════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text animate-in">
+        <div class="hero-badge">🏆 Since 1985 · Award Winning</div>
+        <h1>India's Finest<br><span class="accent">Traditional Sweets</span></h1>
+        <p class="hero-tagline">"Pure Taste of Tradition"</p>
+        <p class="hero-desc">Handcrafted with love using age-old recipes passed down through generations. Every bite is a celebration of authentic Indian flavors — now in Katraj, Pune.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="navigateTo('products')">🍬 Shop Now</button>
+          <button class="btn btn-white" onclick="navigateTo('order')">📦 Order Online</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">40+</div><div class="label">Years of Taste</div></div>
+          <div class="hero-stat"><div class="num">200+</div><div class="label">Sweet Varieties</div></div>
+          <div class="hero-stat"><div class="num">50K+</div><div class="label">Happy Customers</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-frame">
+          <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=600&q=85" alt="Indian Sweets">
+        </div>
+        <div class="hero-float-card fresh">
+          <div class="float-label">Today's Special</div>
+          <div class="float-value">🥛 Fresh Peda</div>
+          <div class="stars-row">★★★★★</div>
+        </div>
+        <div class="hero-float-card rating">
+          <div class="float-label">Customer Rating</div>
+          <div class="float-value">4.9 / 5.0</div>
+          <div class="stars-row">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>Fresh Kaju Katli Daily</span><span>Diwali Gift Boxes Ready</span><span>Bulk Orders Welcome</span><span>Wedding Sweets Specialist</span><span>Home Delivery in Pune</span><span>Pure Desi Ghee Used</span><span>No Artificial Colors</span><span>FSSAI Certified</span><span>Free Delivery above ₹1000</span><span>Open All 7 Days 6 AM–11 PM</span>
+      <span>Fresh Kaju Katli Daily</span><span>Diwali Gift Boxes Ready</span><span>Bulk Orders Welcome</span><span>Wedding Sweets Specialist</span><span>Home Delivery in Pune</span><span>Pure Desi Ghee Used</span><span>No Artificial Colors</span><span>FSSAI Certified</span><span>Free Delivery above ₹1000</span><span>Open All 7 Days 6 AM–11 PM</span>
+    </div>
+  </div>
+
+  <div class="festival-banner">
+    <div class="festival-inner container">
+      <div class="festival-tag">🎊 Festival Offer</div>
+      <div class="festival-text">
+        <strong>Gudhi Padwa Special — Kaju Katli &amp; Gift Boxes at 15% OFF</strong>
+        <span>Use code: GUDI15</span>
+      </div>
+      <div class="festival-countdown">
+        <div class="cd-unit"><span class="cd-num" id="cdDays">03</span><div class="cd-label">Days</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdHrs">10</span><div class="cd-label">Hours</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdMin">45</span><div class="cd-label">Mins</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item"><div class="feature-icon">🥛</div><div><div class="feature-title">Pure Ingredients</div><div class="feature-desc">Fresh milk, real desi ghee &amp; natural flavors only</div></div></div>
+        <div class="feature-item"><div class="feature-icon">🚚</div><div><div class="feature-title">Pune Delivery</div><div class="feature-desc">Same-day delivery across Pune &amp; Katraj area</div></div></div>
+        <div class="feature-item"><div class="feature-icon">🎁</div><div><div class="feature-title">Gift Packaging</div><div class="feature-desc">Premium festive boxes with personalised message cards</div></div></div>
+        <div class="feature-item"><div class="feature-icon">✅</div><div><div class="feature-title">FSSAI Certified</div><div class="feature-desc">Hygienic kitchen certified by food safety authority</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg)">
+    <div class="container">
+      <div class="section-header animate-in">
+        <div class="section-label">Our Collection</div>
+        <h2 class="section-title">Signature Sweet Selection</h2>
+        <p class="section-subtitle">Explore our carefully crafted range of traditional Indian sweets, made fresh every day with time-honoured recipes.</p>
+      </div>
+      <div class="search-bar"><span class="search-icon">🔍</span><input type="text" placeholder="Search sweets, snacks, gifts..." id="homeSearch" oninput="filterHomeProducts()"></div>
+      <div class="category-tabs" id="homeCategoryTabs">
+        <button class="cat-tab active" onclick="filterCategory(this,'all')">All Items</button>
+        <button class="cat-tab" onclick="filterCategory(this,'milk')">🥛 Milk Sweets</button>
+        <button class="cat-tab" onclick="filterCategory(this,'bengali')">🍡 Bengali Sweets</button>
+        <button class="cat-tab" onclick="filterCategory(this,'dryFruit')">🥜 Dry Fruit</button>
+        <button class="cat-tab" onclick="filterCategory(this,'namkeen')">🥙 Namkeen</button>
+        <button class="cat-tab" onclick="filterCategory(this,'festival')">🪔 Festival Special</button>
+      </div>
+      <div class="products-grid" id="homeProductsGrid"></div>
+      <div style="text-align:center;margin-top:3rem"><button class="btn btn-outline" onclick="navigateTo('products')">View All Products →</button></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-section);overflow:hidden">
+    <div class="container">
+      <div class="section-header animate-in">
+        <div class="section-label">Best Sellers</div>
+        <h2 class="section-title">Customers' All-Time Favourites</h2>
+      </div>
+    </div>
+    <div class="scroll-carousel"><div class="scroll-track" id="carouselTrack"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images animate-in">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&q=85" alt="Our Sweets">
+          <img class="about-img-accent" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=85" alt="Making Sweets">
+          <div class="about-float"><span class="big">40+</span><span class="small">Years of Sweet Legacy</span></div>
+        </div>
+        <div class="animate-in">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">A Legacy of Sweetness Since 1985</h2>
+          <p class="section-subtitle" style="margin-bottom:1.5rem">Ambika Sweet was founded with a humble dream: to bring the authentic taste of traditional Indian sweets to every household in Pune. What started as a small shop has grown into a beloved institution.</p>
+          <p style="color:var(--text-light);line-height:1.75;margin-bottom:2rem">Today we serve over 200 varieties of sweets, snacks, and festive treats — all made with the same love, care, and pure ingredients our founder believed in. Our Katraj kitchen never compromises on quality.</p>
+          <div class="values-grid">
+            <div class="value-item"><div class="value-icon">🌿</div><div class="value-title">100% Pure Ingredients</div><div class="value-text">No artificial colors, flavors or preservatives. Ever.</div></div>
+            <div class="value-item"><div class="value-icon">👨‍🍳</div><div class="value-title">Master Halwais</div><div class="value-text">Skilled artisans trained in classical mithai-making</div></div>
+            <div class="value-item"><div class="value-icon">🧹</div><div class="value-title">Hygienic Kitchen</div><div class="value-text">FSSAI certified, daily sanitisation routines</div></div>
+            <div class="value-item"><div class="value-icon">❤️</div><div class="value-title">Made with Love</div><div class="value-text">Every piece crafted by hand with genuine care</div></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:2rem" onclick="navigateTo('about')">Read Our Full Story →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header animate-in">
+        <div class="section-label">Customer Love</div>
+        <h2 class="section-title">What Our Sweet Family Says</h2>
+        <p class="section-subtitle">Real stories from real customers in Pune who have made Ambika Sweet a part of their celebrations.</p>
+      </div>
+      <div class="testimonials-grid" id="homeTestimonials"></div>
+      <div style="text-align:center;margin-top:3rem"><button class="btn btn-outline" onclick="navigateTo('testimonials')">Read More Reviews →</button></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg,var(--brown) 0%,var(--text-dark) 100%);position:relative;overflow:hidden">
+    <div class="container" style="text-align:center;position:relative">
+      <div class="section-label" style="color:var(--gold-light)">Get Started</div>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);color:#fff;max-width:600px;margin:0 auto 1rem">Ready to Taste Pure Tradition?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2.5rem;line-height:1.75">Order online, visit our Katraj shop, or call us for bulk and wedding orders. We deliver happiness in every sweet box.</p>
+      <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="navigateTo('order')">📦 Order Online Now</button>
+        <button class="btn btn-white" onclick="window.open('https://wa.me/919225532028','_blank')">💬 WhatsApp Us</button>
+        <button class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" onclick="navigateTo('contact')">📍 Find Our Shop</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: ABOUT ══════════ -->
+<div class="page" id="page-about">
+  <div class="page-hero">
+    <h1>About Ambika Sweet</h1>
+    <p>Our story, our values, our commitment to you</p>
+    <div class="breadcrumb">Home <span>›</span> About Us</div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&q=85" alt="Our Sweets">
+          <img class="about-img-accent" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=85" alt="Sweet Making">
+          <div class="about-float"><span class="big">1985</span><span class="small">Est. in Pune</span></div>
+        </div>
+        <div>
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Born from Passion, Built on Trust</h2>
+          <p style="color:var(--text-light);line-height:1.8;margin-bottom:1.2rem">In 1985, our founder started Ambika Sweet with a small rented space and an unshakeable belief: every Indian deserves sweets made purely, honestly, and with love. His first product — plain barfi — sold out on day one.</p>
+          <p style="color:var(--text-light);line-height:1.8;margin-bottom:1.2rem">Word spread quickly across Pune's Katraj neighborhood. Within a year, Ambika Sweet had a loyal following. By 1995 we expanded to a full-fledged shop with a display kitchen. Today we're a Pune institution — trusted by families across generations.</p>
+          <p style="color:var(--text-light);line-height:1.8;margin-bottom:2rem">Our team continues the legacy — blending traditional recipes with modern hygiene and packaging standards — while keeping every sweet as authentic as it was on day one.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
+            <div style="text-align:center;padding:1.5rem;background:var(--bg-section);border-radius:16px;border:1px solid var(--border)"><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold)">40+</div><div style="font-size:.85rem;color:var(--text-light)">Years of Experience</div></div>
+            <div style="text-align:center;padding:1.5rem;background:var(--bg-section);border-radius:16px;border:1px solid var(--border)"><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold)">200+</div><div style="font-size:.85rem;color:var(--text-light)">Sweet Varieties</div></div>
+            <div style="text-align:center;padding:1.5rem;background:var(--bg-section);border-radius:16px;border:1px solid var(--border)"><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold)">50K+</div><div style="font-size:.85rem;color:var(--text-light)">Happy Customers</div></div>
+            <div style="text-align:center;padding:1.5rem;background:var(--bg-section);border-radius:16px;border:1px solid var(--border)"><div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold)">Pune</div><div style="font-size:.85rem;color:var(--text-light)">Katraj, Maharashtra</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-section)">
+    <div class="container">
+      <div class="section-header"><div class="section-label">What We Stand For</div><h2 class="section-title">Our Core Values</h2></div>
+      <div class="grid-3">
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">🌿</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Pure Ingredients</h3><p style="color:var(--text-light);line-height:1.75">We source fresh milk daily, use pure desi cow ghee, and handpick dry fruits. No preservatives, no artificial flavors — ever.</p></div>
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">🧼</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Hygiene First</h3><p style="color:var(--text-light);line-height:1.75">Our FSSAI-certified kitchen undergoes daily deep cleaning. All staff wear PPE, and we maintain strict cold-chain for dairy products.</p></div>
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">📜</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Traditional Recipes</h3><p style="color:var(--text-light);line-height:1.75">Our recipes have been perfected over 3 generations. We never take shortcuts with cooking time, ratios, or methods.</p></div>
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">🎯</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Our Mission</h3><p style="color:var(--text-light);line-height:1.75">To keep India's rich mithai heritage alive by making authentic, affordable, and accessible sweets for every occasion.</p></div>
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">🔭</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Our Vision</h3><p style="color:var(--text-light);line-height:1.75">To be Pune's most trusted sweet brand, known not just for taste but for transparency, ethics, and bringing joy to every celebration.</p></div>
+        <div class="value-item" style="padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem">🤝</div><h3 style="font-family:'Playfair Display',serif;margin-bottom:.8rem;color:var(--text-dark)">Community First</h3><p style="color:var(--text-light);line-height:1.75">We employ local halwais, source from local farms, and actively participate in Pune's community festivals and charitable food drives.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: PRODUCTS ══════════ -->
+<div class="page" id="page-products">
+  <div class="page-hero">
+    <h1>Our Sweet Collection</h1>
+    <p>Over 200 varieties, made fresh every day</p>
+    <div class="breadcrumb">Home <span>›</span> Products</div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="search-bar"><span class="search-icon">🔍</span><input type="text" placeholder="Search for sweets, snacks, gift boxes..." id="productSearch" oninput="filterProducts()"></div>
+      <div class="category-tabs" id="productCategoryTabs">
+        <button class="cat-tab active" onclick="filterProductsCategory(this,'all')">All Items</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'milk')">🥛 Milk Sweets</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'bengali')">🍡 Bengali Sweets</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'dryFruit')">🥜 Dry Fruit</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'namkeen')">🥙 Namkeen</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'festival')">🪔 Festival Specials</button>
+        <button class="cat-tab" onclick="filterProductsCategory(this,'gift')">🎁 Gift Boxes</button>
+      </div>
+      <div class="products-grid" id="allProductsGrid"></div>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-section)">
+    <div class="container">
+      <div class="grid-2" style="gap:3rem">
+        <div style="background:linear-gradient(135deg,var(--gold),var(--saffron));border-radius:24px;padding:3rem;color:#fff;position:relative;overflow:hidden">
+          <div style="position:absolute;right:-20px;bottom:-20px;font-size:8rem;opacity:.15">🎂</div>
+          <div style="position:relative"><div style="font-size:2.5rem;margin-bottom:1rem">👔</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem">Corporate Gift Orders</h3>
+          <p style="opacity:.9;line-height:1.75;margin-bottom:1.5rem">Branded sweet boxes for Diwali, New Year, and corporate events. Bulk pricing &amp; on-time delivery guaranteed.</p>
+          <button class="btn btn-white" onclick="navigateTo('order')">Enquire Now →</button></div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--brown),var(--text-dark));border-radius:24px;padding:3rem;color:#fff;position:relative;overflow:hidden">
+          <div style="position:absolute;right:-20px;bottom:-20px;font-size:8rem;opacity:.15">💒</div>
+          <div style="position:relative"><div style="font-size:2.5rem;margin-bottom:1rem">💍</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.8rem">Wedding Sweet Orders</h3>
+          <p style="opacity:.9;line-height:1.75;margin-bottom:1.5rem">Traditional wedding sweets in bulk — thali sets, shagun boxes, and custom mithai for every ceremony.</p>
+          <button class="btn btn-primary" onclick="navigateTo('order')">Plan Your Wedding →</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: GALLERY ══════════ -->
+<div class="page" id="page-gallery">
+  <div class="page-hero">
+    <h1>Our Gallery</h1>
+    <p>A visual journey through our sweets and celebrations</p>
+    <div class="breadcrumb">Home <span>›</span> Gallery</div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="section-header"><div class="section-label">Visual Stories</div><h2 class="section-title">Moments of Sweetness</h2></div>
+      <div class="gallery-grid">
+        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=800&q=85" alt="Kaju Katli" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=85" alt="Gulab Jamun" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=85" alt="Rasgulla" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=85" alt="Laddu" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=85" alt="Barfi" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=85" alt="Sweet Platter" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=85" alt="Peda" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=85" alt="Sweets Variety" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=85" alt="Gujiya" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&q=85" alt="Cham Cham" loading="lazy"><div class="gallery-overlay">🔍 View</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: ORDER ══════════ -->
+<div class="page" id="page-order">
+  <div class="page-hero">
+    <h1>Order Online</h1>
+    <p>Sweet delivery to your doorstep in 2–4 hours</p>
+    <div class="breadcrumb">Home <span>›</span> Order Online</div>
+  </div>
+  <section class="section order-section">
+    <div class="container">
+      <div class="section-header"><div class="section-label">Easy Ordering</div><h2 class="section-title">Place Your Sweet Order</h2><p class="section-subtitle">Fill in the details below and we'll prepare your order fresh and deliver it on time.</p></div>
+      <div class="order-form" id="orderForm">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text-dark);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">📦 Order Details</h3>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" type="text" placeholder="Your full name" id="oName"></div>
+          <div class="form-group"><label class="form-label">Phone Number *</label><input class="form-input" type="tel" placeholder="+91 92255 32028" id="oPhone"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Delivery Address *</label><textarea class="form-input" rows="3" placeholder="Full address with pincode (Pune)" id="oAddress" style="resize:vertical"></textarea></div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Select Product *</label>
+            <select class="form-input" id="oProduct">
+              <option value="">-- Choose a sweet --</option>
+              <option>Kaju Katli (250g) – ₹680</option>
+              <option>Motichoor Laddu (500g) – ₹280</option>
+              <option>Rasgulla Box (6 pcs) – ₹180</option>
+              <option>Dry Fruit Barfi (250g) – ₹520</option>
+              <option>Gulab Jamun (500g) – ₹160</option>
+              <option>Cham Cham (6 pcs) – ₹220</option>
+              <option>Kaju Roll (250g) – ₹750</option>
+              <option>Milk Peda (250g) – ₹240</option>
+              <option>Kalakand (250g) – ₹300</option>
+              <option>Modak (6 pcs) – ₹320</option>
+              <option>Gujiya (6 pcs) – ₹260</option>
+              <option>Namkeen Mixture (500g) – ₹180</option>
+              <option>Samosa (1 pc) – ₹15</option>
+              <option>Kachori (1 pc) – ₹20</option>
+              <option>Diwali Gift Box – ₹899</option>
+              <option>Wedding Thali (Custom)</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Quantity</label><input class="form-input" type="number" min="1" value="1" id="oQty"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Order Type</label>
+          <select class="form-input" id="oType">
+            <option>Regular Home Delivery (Pune)</option>
+            <option>Bulk Order (10+ kg)</option>
+            <option>Wedding Order</option>
+            <option>Corporate Gift Order</option>
+            <option>Festival Special</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Special Instructions</label><textarea class="form-input" rows="2" placeholder="Any special requests, allergies, or customisation..." id="oNotes" style="resize:vertical"></textarea></div>
+        <div class="form-group"><label class="form-label">Payment Method *</label>
+          <div class="payment-options">
+            <div class="payment-option selected" onclick="selectPayment(this)"><input type="radio" name="payment" checked><span class="payment-icon">💵</span><span class="payment-label">Cash on Delivery</span></div>
+            <div class="payment-option" onclick="selectPayment(this)"><input type="radio" name="payment"><span class="payment-icon">📱</span><span class="payment-label">UPI / GPay</span></div>
+            <div class="payment-option" onclick="selectPayment(this)"><input type="radio" name="payment"><span class="payment-icon">💳</span><span class="payment-label">Card Payment</span></div>
+          </div>
+        </div>
+        <div class="order-summary">
+          <div style="font-weight:600;margin-bottom:.8rem;color:var(--text-dark)">Order Summary</div>
+          <div class="order-summary-row"><span>Subtotal</span><span>₹350</span></div>
+          <div class="order-summary-row"><span>Delivery (Pune)</span><span style="color:#28a745">Free</span></div>
+          <div class="order-summary-row"><span>Discount (WELCOME20)</span><span style="color:var(--saffron)">-₹70</span></div>
+          <div class="order-summary-row"><span>Total Payable</span><span>₹280</span></div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1.05rem;padding:1rem" onclick="placeOrder()">🎉 Place Order Now</button>
+        <p style="text-align:center;margin-top:1rem;font-size:.82rem;color:var(--text-light)">We'll call <strong>+91 92255 32028</strong> to confirm within 30 mins. 🕐</p>
+      </div>
+      <div id="orderConfirm" class="hidden" style="max-width:700px;margin:0 auto;text-align:center;padding:3rem">
+        <div style="width:100px;height:100px;background:linear-gradient(135deg,var(--gold),var(--saffron));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 1.5rem;box-shadow:0 10px 30px var(--shadow)">✓</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--text-dark);margin-bottom:.8rem">Order Placed Successfully! 🎉</h2>
+        <p style="color:var(--text-light);line-height:1.75;margin-bottom:2rem">Thank you! Your order has been received. Our team will call you on <strong>+91 92255 32028</strong> within 30 minutes to confirm. Expected delivery: <strong>2–4 hours</strong>.</p>
+        <div style="background:var(--bg-section);border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:2rem;text-align:left"><div style="font-weight:600;color:var(--text-dark);margin-bottom:.8rem">Order Details:</div><div id="orderDetails"></div></div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="navigateTo('products')">🍬 Continue Shopping</button>
+          <button class="btn btn-outline" onclick="window.open('https://wa.me/919225532028','_blank')">💬 Track on WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: TESTIMONIALS ══════════ -->
+<div class="page" id="page-testimonials">
+  <div class="page-hero">
+    <h1>Customer Reviews</h1>
+    <p>Real stories from our sweet family in Pune</p>
+    <div class="breadcrumb">Home <span>›</span> Reviews</div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Customer Love</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem">
+          <div style="font-size:3rem;font-weight:700;font-family:'Playfair Display',serif;color:var(--gold)">4.9</div>
+          <div><div style="color:var(--gold);font-size:1.3rem">★★★★★</div><div style="color:var(--text-light);font-size:.85rem">Based on 2,400+ reviews</div></div>
+        </div>
+      </div>
+      <div class="testimonials-grid" id="allTestimonials"></div>
+      <div style="max-width:600px;margin:4rem auto 0;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:2.5rem">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text-dark);margin-bottom:1.5rem">Share Your Experience 💬</h3>
+        <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Your name" id="fbName"></div>
+        <div class="form-group"><label class="form-label">Rating</label><div id="starRating" style="font-size:2rem;cursor:pointer;letter-spacing:5px;color:var(--gold)" onclick="handleStarClick(event)">☆☆☆☆☆</div></div>
+        <div class="form-group"><label class="form-label">Your Review</label><textarea class="form-input" rows="4" placeholder="Tell us about your experience..." id="fbText" style="resize:vertical"></textarea></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitReview()">Submit Review →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ PAGE: CONTACT ══════════ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>Visit us in Katraj, Pune or reach us anytime</p>
+    <div class="breadcrumb">Home <span>›</span> Contact</div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title" style="font-size:2rem">Visit or Call Us</h2>
+          <p style="color:var(--text-light);line-height:1.75;margin-bottom:2rem">Our friendly staff is always ready to help with sweet orders, bulk inquiries, and special event planning. Open all 7 days!</p>
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <div class="contact-card-title">Shop Address</div>
+              <div class="contact-card-detail">Shriram Gruharachna, 6, Road,<br>Sukhsagar Nagar, Katraj,<br>Pune, Maharashtra — 411046</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <div>
+              <div class="contact-card-title">Phone Number</div>
+              <div class="contact-card-detail"><a href="tel:+919225532028" style="color:var(--gold)">+91 92255 32028</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <div>
+              <div class="contact-card-title">WhatsApp</div>
+              <div class="contact-card-detail"><a href="https://wa.me/919225532028" target="_blank" style="color:var(--gold)">Chat on WhatsApp →</a><br><span style="font-size:.8rem">Quick orders &amp; queries</span></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div>
+              <div class="contact-card-title">Email</div>
+              <div class="contact-card-detail"><a href="mailto:order@ambikasweet.in" style="color:var(--gold)">order@ambikasweet.in</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🕐</div>
+            <div>
+              <div class="contact-card-title">Business Hours</div>
+              <div class="contact-card-detail">
+                <div class="hours-table">
+                  <div class="hours-row"><span class="day">Monday – Wednesday</span><span class="time">6:00 AM – 11:00 PM</span></div>
+                  <div class="hours-row"><span class="day">Thursday</span><span class="time">6:00 AM – 11:00 PM</span></div>
+                  <div class="hours-row"><span class="day">Friday – Saturday</span><span class="time">6:00 AM – 11:00 PM</span></div>
+                  <div class="hours-row"><span class="day">Sunday</span><span class="time">6:00 AM – 11:00 PM</span></div>
+                  <div class="hours-row" style="font-size:.78rem;color:var(--saffron)"><span class="day">⚠️ Festival / Holiday</span><span class="time">Hours may differ</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="map-frame">
+            <div class="map-placeholder">
+              <span class="map-icon">🗺️</span>
+              <strong style="color:var(--text-dark);font-size:1.1rem">Ambika Sweet, Katraj, Pune</strong>
+              <p style="text-align:center;font-size:.88rem">Shriram Gruharachna, 6, Road,<br>Sukhsagar Nagar, Katraj, Pune 411046</p>
+              <button class="btn btn-primary btn-sm" onclick="window.open('https://maps.google.com/?q=Shriram+Gruharachna+Sukhsagar+Nagar+Katraj+Pune+411046','_blank')">Open in Google Maps →</button>
+            </div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2rem;margin-top:2rem">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text-dark);margin-bottom:1.5rem">Send Us a Message</h3>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Name</label><input class="form-input" type="text" placeholder="Your name" id="cName"></div>
+              <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="+91 92255 32028" id="cPhone"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Subject</label>
+              <select class="form-input" id="cSubject">
+                <option>General Inquiry</option><option>Bulk Order</option><option>Wedding Order</option><option>Corporate Gift</option><option>Complaint / Feedback</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" rows="4" placeholder="Your message..." id="cMsg" style="resize:vertical"></textarea></div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="sendMessage()">Send Message →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1rem">
+          <div class="logo-icon">🪔</div>
+          <div><div class="logo-text" style="color:#fff"><span style="color:var(--gold-light)">Ambika</span> Sweet</div><span class="logo-tagline">Pure Taste of Tradition</span></div>
+        </div>
+        <p class="footer-desc">Crafting India's finest traditional sweets since 1985. Every bite is a piece of our heritage, made with love and pure ingredients in Pune, Maharashtra.</p>
+        <div class="social-links">
+          <a class="social-link" href="#" title="Facebook">📘</a>
+          <a class="social-link" href="#" title="Instagram">📸</a>
+          <a class="social-link" href="#" title="YouTube">▶️</a>
+          <a class="social-link" href="https://wa.me/919225532028" target="_blank" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <div class="footer-links">
+          <a href="#" onclick="navigateTo('home');return false">Home</a>
+          <a href="#" onclick="navigateTo('about');return false">About Us</a>
+          <a href="#" onclick="navigateTo('products');return false">Our Products</a>
+          <a href="#" onclick="navigateTo('gallery');return false">Gallery</a>
+          <a href="#" onclick="navigateTo('order');return false">Order Online</a>
+          <a href="#" onclick="navigateTo('contact');return false">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Our Sweets</div>
+        <div class="footer-links">
+          <a href="#">Milk Sweets</a><a href="#">Bengali Sweets</a><a href="#">Dry Fruit Sweets</a><a href="#">Namkeen &amp; Snacks</a><a href="#">Festival Specials</a><a href="#">Gift Boxes</a><a href="#">Wedding Orders</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-contact-item"><span>📍</span><span>Shriram Gruharachna, 6, Road, Sukhsagar Nagar, Katraj, Pune 411046</span></div>
+        <div class="footer-contact-item"><span>📞</span><span><a href="tel:+919225532028" style="color:var(--gold-light)">+91 92255 32028</a></span></div>
+        <div class="footer-contact-item"><span>✉️</span><span><a href="mailto:order@ambikasweet.in" style="color:var(--gold-light)">order@ambikasweet.in</a></span></div>
+        <div class="footer-contact-item"><span>🕐</span><span>All Days: 6 AM – 11 PM<br><span style="font-size:.78rem;opacity:.75">Festival hours may differ</span></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ambika Sweet. All rights reserved. Crafted with ❤️ in Pune, Maharashtra.</span>
+    <span>FSSAI Lic: 10012345678901 · GST: 27AAHCP1234A1Z5</span>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-actions">
+  <div class="float-btn float-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</div>
+  <div class="float-btn float-call" onclick="window.location.href='tel:+919225532028'" title="Call Now">📞</div>
+  <div class="float-btn float-wa" onclick="window.open('https://wa.me/919225532028?text=Hi!%20I%20want%20to%20order%20sweets%20from%20Ambika%20Sweet%20Pune','_blank')" title="WhatsApp">💬</div>
+</div>
+
+<script>
+var products = [
+  {id:1,name:"Kaju Katli",cat:"dryFruit",price:680,oldPrice:750,unit:"250g",badge:"bestseller",desc:"Finest cashew diamonds made with premium kaju & sugar. Melt-in-mouth texture.",img:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=400&q=80",rating:4.9,reviews:847},
+  {id:2,name:"Motichoor Laddu",cat:"festival",price:280,unit:"500g",badge:"bestseller",desc:"Tiny golden pearls of besan fried in pure ghee, sweetened to perfection.",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80",rating:4.8,reviews:612},
+  {id:3,name:"Rasgulla",cat:"bengali",price:180,unit:"6 pcs",badge:null,desc:"Soft, spongy Bengali cottage cheese balls soaked in light sugar syrup.",img:"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=80",rating:4.7,reviews:498},
+  {id:4,name:"Dry Fruit Barfi",cat:"dryFruit",price:520,oldPrice:580,unit:"250g",badge:"new",desc:"Premium barfi loaded with almonds, pistachios & cashews in a khoya base.",img:"https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=80",rating:4.9,reviews:321},
+  {id:5,name:"Gulab Jamun",cat:"milk",price:160,unit:"500g",badge:"bestseller",desc:"Soft khoya-based dumplings soaked in aromatic rose sugar syrup.",img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80",rating:4.8,reviews:956},
+  {id:6,name:"Cham Cham",cat:"bengali",price:220,unit:"6 pcs",badge:null,desc:"Cylindrical chhena sweets stuffed with sweet malai & garnished with coconut.",img:"https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&q=80",rating:4.6,reviews:287},
+  {id:7,name:"Kaju Roll",cat:"dryFruit",price:750,unit:"250g",badge:"new",desc:"Elegant kaju rolls stuffed with dry fruits & layered with vark (silver leaf).",img:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80",rating:4.9,reviews:189},
+  {id:8,name:"Milk Peda",cat:"milk",price:240,unit:"250g",badge:null,desc:"Soft, dense khoya pedas flavored with cardamom & saffron. Rich & aromatic.",img:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80",rating:4.7,reviews:432},
+  {id:9,name:"Kalakand",cat:"milk",price:300,unit:"250g",badge:null,desc:"Grainy, moist paneer-based sweet with subtle cardamom & silver leaf garnish.",img:"https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&q=80",rating:4.8,reviews:367},
+  {id:10,name:"Samosa",cat:"namkeen",price:15,unit:"1 pc",badge:"bestseller",desc:"Crisp golden triangles filled with spiced potatoes & peas. Freshly fried.",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80",rating:4.9,reviews:1240},
+  {id:11,name:"Modak",cat:"festival",price:320,unit:"6 pcs",badge:"festival",desc:"Traditional Ganesh Chaturthi modak with sweet coconut-jaggery stuffing.",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80",rating:4.8,reviews:156},
+  {id:12,name:"Gujiya",cat:"festival",price:260,unit:"6 pcs",badge:"festival",desc:"Crispy half-moon pastries stuffed with mawa, dry fruits & coconut.",img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&q=80",rating:4.7,reviews:203},
+  {id:13,name:"Namkeen Mixture",cat:"namkeen",price:180,unit:"500g",badge:null,desc:"Crunchy blend of boondi, sev, nuts & spices. Perfect tea-time snack.",img:"https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=80",rating:4.6,reviews:445},
+  {id:14,name:"Anjeer Barfi",cat:"dryFruit",price:620,unit:"250g",badge:"new",desc:"Premium fig & dry fruit barfi — rich, nutritious & naturally sweet.",img:"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=80",rating:4.8,reviews:134},
+  {id:15,name:"Kachori",cat:"namkeen",price:20,unit:"1 pc",badge:null,desc:"Flaky deep-fried pastry filled with spiced moong dal. Served with chutney.",img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80",rating:4.7,reviews:678},
+  {id:16,name:"Diwali Gift Box",cat:"gift",price:899,oldPrice:1100,unit:"1 box",badge:"festival",desc:"Curated Diwali gift box with 6 varieties of premium sweets. Elegantly packed.",img:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=80",rating:5.0,reviews:98}
+];
+
+var testimonials = [
+  {name:"Priya Sharma",loc:"Katraj, Pune",text:"Ambika Sweet has been our family's go-to for every Diwali for the past 15 years. The Kaju Katli is absolutely unmatched — pure, rich, and perfectly sweet. Can't imagine any celebration without them!",rating:5,avatar:"P"},
+  {name:"Rajesh Mehta",loc:"Pune",text:"Ordered 5 kg of mixed sweets for my daughter's wedding. Everything was delivered on time, perfectly packed, and tasted absolutely divine. The guests couldn't stop praising the quality. Highly recommended!",rating:5,avatar:"R"},
+  {name:"Anjali Patel",loc:"Hadapsar, Pune",text:"I always visit Ambika Sweet at Katraj for every special occasion. The taste is consistently excellent year after year. Best sweet shop in Pune by far!",rating:5,avatar:"A"},
+  {name:"Suresh Kumar",loc:"Pune",text:"Tried many sweet shops across Pune but nothing comes close to Ambika Sweet's Motichoor Laddu. The texture, the fragrance, the taste — everything is on another level. True artisanal quality.",rating:5,avatar:"S"},
+  {name:"Meena Joshi",loc:"Bibwewadi, Pune",text:"Their Cham Cham and Rasgulla are to die for! Fresh, soft, and not overly sweet. My kids absolutely love the Gulab Jamun. We order every week from the Katraj shop!",rating:5,avatar:"M"},
+  {name:"Vikram Desai",loc:"Pune",text:"Gifted their Diwali gift box to our business clients and got so many compliments. Premium packaging, excellent quality, and on-time Pune delivery. Will use Ambika Sweet for all corporate gifts.",rating:5,avatar:"V"}
+];
+
+var cart = [];
+var currentCategory = 'all';
+
+function addToCart(id) {
+  var p = products.find(function(x){return x.id===id;});
+  if(!p) return;
+  var ex = cart.find(function(x){return x.id===id;});
+  if(ex) ex.qty++;
+  else cart.push(Object.assign({},p,{qty:1}));
+  updateCartUI();
+  showToast('✓ '+p.name+' added to cart!');
+}
+function removeFromCart(id) {
+  cart = cart.filter(function(x){return x.id!==id;});
+  updateCartUI(); renderCartSidebar();
+}
+function updateQty(id,delta) {
+  var item = cart.find(function(x){return x.id===id;});
+  if(!item) return;
+  item.qty+=delta;
+  if(item.qty<=0) removeFromCart(id);
+  else{updateCartUI();renderCartSidebar();}
+}
+function updateCartUI() {
+  var total = cart.reduce(function(s,i){return s+i.qty;},0);
+  document.getElementById('cartBadge').textContent = total;
+  renderCartSidebar();
+}
+function renderCartSidebar() {
+  var body = document.getElementById('cartBody');
+  var totalEl = document.getElementById('cartTotal');
+  if(cart.length===0){
+    body.innerHTML='<div class="cart-empty"><span class="empty-icon">🛒</span><p style="font-weight:600;color:var(--text-dark);margin-bottom:.4rem">Your cart is empty</p><p style="font-size:.85rem">Add some delicious sweets!</p></div>';
+    totalEl.textContent='₹0';return;
+  }
+  var html='',total=0;
+  cart.forEach(function(item){
+    total+=item.price*item.qty;
+    html+='<div class="cart-item"><div class="cart-item-img"><img src="'+item.img+'" alt="'+item.name+'" loading="lazy"></div>'+
+    '<div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div>'+
+    '<div class="cart-item-price">₹'+item.price+' / '+item.unit+'</div>'+
+    '<div class="cart-item-qty"><div class="qty-btn" onclick="updateQty('+item.id+',-1)">−</div>'+
+    '<span class="qty-num">'+item.qty+'</span>'+
+    '<div class="qty-btn" onclick="updateQty('+item.id+',1)">+</div></div></div>'+
+    '<span class="cart-item-remove" onclick="removeFromCart('+item.id+')" title="Remove">✕</span></div>';
+  });
+  body.innerHTML=html;
+  totalEl.textContent='₹'+total.toLocaleString('en-IN');
+}
+function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartSidebar').classList.add('open');}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.getElementById('cartSidebar').classList.remove('open');}
+function proceedToOrder(){closeCart();navigateTo('order');}
+
+function navigateTo(page) {
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+  var el = document.getElementById('page-'+page);
+  if(el) el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(page==='home'){renderHomeProducts();renderTestimonialsHome();}
+  if(page==='products'){renderAllProducts('all','');}
+  if(page==='testimonials'){renderAllTestimonials();}
+}
+
+function getCatLabel(cat){
+  var m={milk:'🥛 Milk Sweet',bengali:'🍡 Bengali',dryFruit:'🥜 Dry Fruit',namkeen:'🥙 Namkeen',festival:'🪔 Festival',gift:'🎁 Gift Box'};
+  return m[cat]||cat;
+}
+function renderProductCard(p){
+  var bh='';
+  if(p.badge==='bestseller') bh='<span class="product-badge badge-bestseller">⭐ Best Seller</span>';
+  else if(p.badge==='new') bh='<span class="product-badge badge-new">✨ New</span>';
+  else if(p.badge==='festival') bh='<span class="product-badge badge-festival">🪔 Festival</span>';
+  var op=p.oldPrice?'<div class="product-price-old">₹'+p.oldPrice+'</div>':'';
+  var stars='★★★★★'.slice(0,Math.floor(p.rating))+'☆☆☆☆☆'.slice(0,5-Math.floor(p.rating));
+  return '<div class="product-card">'+
+    '<div class="product-img"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy">'+bh+
+    '<div class="badge-veg"></div>'+
+    '<div class="product-wishlist" onclick="toggleWishlist(this)">🤍</div></div>'+
+    '<div class="product-body">'+
+    '<div class="product-category">'+getCatLabel(p.cat)+'</div>'+
+    '<div class="product-name">'+p.name+'</div>'+
+    '<div class="product-desc">'+p.desc+'</div>'+
+    '<div class="product-rating"><span class="stars">'+stars+'</span><span class="review-count">'+p.rating+' ('+p.reviews.toLocaleString()+')</span></div>'+
+    '<div class="product-footer"><div>'+op+'<div class="product-price">₹'+p.price+' <span class="unit">/ '+p.unit+'</span></div></div>'+
+    '<div class="add-cart-btn" onclick="addToCart('+p.id+')" title="Add to Cart">+</div></div></div></div>';
+}
+function renderHomeProducts(){
+  var grid=document.getElementById('homeProductsGrid');
+  if(!grid) return;
+  var filtered=products.filter(function(p){return currentCategory==='all'||p.cat===currentCategory;}).slice(0,8);
+  grid.innerHTML=filtered.map(renderProductCard).join('');
+}
+function renderAllProducts(cat,search){
+  var grid=document.getElementById('allProductsGrid');
+  if(!grid) return;
+  var filtered=products.filter(function(p){
+    return (cat==='all'||p.cat===cat) && (!search||p.name.toLowerCase().indexOf(search)>=0);
+  });
+  grid.innerHTML=filtered.map(renderProductCard).join('');
+}
+function filterCategory(btn,cat){
+  currentCategory=cat;
+  document.querySelectorAll('#homeCategoryTabs .cat-tab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');renderHomeProducts();
+}
+function filterProductsCategory(btn,cat){
+  currentCategory=cat;
+  document.querySelectorAll('#productCategoryTabs .cat-tab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  var s=document.getElementById('productSearch')?document.getElementById('productSearch').value.toLowerCase():'';
+  renderAllProducts(cat,s);
+}
+function filterProducts(){
+  renderAllProducts(currentCategory,document.getElementById('productSearch').value.toLowerCase());
+}
+function filterHomeProducts(){
+  var s=document.getElementById('homeSearch').value.toLowerCase();
+  var filtered=products.filter(function(p){return p.name.toLowerCase().indexOf(s)>=0;}).slice(0,8);
+  document.getElementById('homeProductsGrid').innerHTML=filtered.map(renderProductCard).join('');
+}
+function renderCarousel(){
+  var track=document.getElementById('carouselTrack');
+  if(!track) return;
+  var items=products.filter(function(p){return p.badge==='bestseller';});
+  var doubled=items.concat(items);
+  track.innerHTML=doubled.map(function(p){
+    return '<div class="mini-product"><div class="mini-product-img"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>'+
+    '<div class="mini-product-body"><div class="mini-product-name">'+p.name+'</div>'+
+    '<div class="mini-product-price">₹'+p.price+' / '+p.unit+'</div></div></div>';
+  }).join('');
+}
+function renderTestCard(t){
+  var stars='★★★★★'.slice(0,t.rating)+'☆☆☆☆☆'.slice(0,5-t.rating);
+  return '<div class="testimonial-card"><div class="testimonial-stars">'+stars+'</div>'+
+    '<div class="testimonial-text">"'+t.text+'"</div>'+
+    '<div class="testimonial-author"><div class="author-avatar">'+t.avatar+'</div>'+
+    '<div><div class="author-name">'+t.name+'</div><div class="author-loc">📍 '+t.loc+'</div></div></div></div>';
+}
+function renderTestimonialsHome(){
+  var el=document.getElementById('homeTestimonials');
+  if(el) el.innerHTML=testimonials.slice(0,3).map(renderTestCard).join('');
+}
+function renderAllTestimonials(){
+  var el=document.getElementById('allTestimonials');
+  if(el) el.innerHTML=testimonials.map(renderTestCard).join('');
+}
+var selectedStars=0;
+function handleStarClick(e){
+  var el=document.getElementById('starRating');
+  var rect=el.getBoundingClientRect();
+  selectedStars=Math.min(5,Math.max(1,Math.ceil((e.clientX-rect.left)/(rect.width/5))));
+  el.textContent='★★★★★'.slice(0,selectedStars)+'☆☆☆☆☆'.slice(0,5-selectedStars);
+}
+function submitReview(){
+  var name=document.getElementById('fbName').value,text=document.getElementById('fbText').value;
+  if(!name||!text){showToast('⚠️ Please fill all fields');return;}
+  showToast('⭐ Thank you for your review!');
+  document.getElementById('fbName').value='';document.getElementById('fbText').value='';
+  document.getElementById('starRating').textContent='☆☆☆☆☆';selectedStars=0;
+}
+function selectPayment(el){
+  document.querySelectorAll('.payment-option').forEach(function(o){o.classList.remove('selected');});
+  el.classList.add('selected');
+}
+function placeOrder(){
+  var name=document.getElementById('oName').value,phone=document.getElementById('oPhone').value;
+  var address=document.getElementById('oAddress').value,product=document.getElementById('oProduct').value;
+  if(!name||!phone||!address||!product){showToast('⚠️ Please fill all required fields');return;}
+  var qty=document.getElementById('oQty').value||1;
+  var type=document.getElementById('oType').value||'Home Delivery';
+  var payEl=document.querySelector('.payment-option.selected .payment-label');
+  var payment=payEl?payEl.textContent:'Cash';
+  var orderId='AMS'+Math.floor(10000+Math.random()*90000);
+  document.getElementById('orderForm').classList.add('hidden');
+  document.getElementById('orderConfirm').classList.remove('hidden');
+  document.getElementById('orderDetails').innerHTML=
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;font-size:.88rem">'+
+    '<div style="color:var(--text-light)">Order ID:</div><div style="color:var(--gold);font-weight:700">#'+orderId+'</div>'+
+    '<div style="color:var(--text-light)">Customer:</div><div>'+name+'</div>'+
+    '<div style="color:var(--text-light)">Phone:</div><div>'+phone+'</div>'+
+    '<div style="color:var(--text-light)">Product:</div><div>'+product+' × '+qty+'</div>'+
+    '<div style="color:var(--text-light)">Order Type:</div><div>'+type+'</div>'+
+    '<div style="color:var(--text-light)">Payment:</div><div>'+payment+'</div></div>';
+  showToast('🎉 Order placed successfully!');
+}
+function sendMessage(){
+  var name=document.getElementById('cName').value,msg=document.getElementById('cMsg').value;
+  if(!name||!msg){showToast('⚠️ Please fill all fields');return;}
+  showToast("✓ Message sent! We'll reply soon.");
+  document.getElementById('cName').value='';document.getElementById('cPhone').value='';document.getElementById('cMsg').value='';
+}
+function toggleWishlist(btn){
+  btn.classList.toggle('liked');
+  btn.textContent=btn.classList.contains('liked')?'❤️':'🤍';
+  if(btn.classList.contains('liked')) showToast('❤️ Added to wishlist!');
+}
+var toastTimer;
+function showToast(msg){
+  clearTimeout(toastTimer);
+  document.getElementById('toastMsg').textContent=msg;
+  document.getElementById('toast').classList.add('show');
+  toastTimer=setTimeout(function(){document.getElementById('toast').classList.remove('show');},3000);
+}
+function closePopup(){document.getElementById('discountPopup').classList.remove('open');}
+function toggleTheme(){
+  var dark=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('themeIcon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList[window.scrollY>80?'add':'remove']('scrolled');
+});
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');}
+function updateCountdown(){
+  var target=new Date();target.setDate(target.getDate()+3);target.setHours(10,0,0,0);
+  var diff=target-new Date();if(diff<=0) return;
+  var d=Math.floor(diff/864e5),h=Math.floor((diff%864e5)/36e5),m=Math.floor((diff%36e5)/6e4);
+  function pad(n){return String(n).padStart(2,'0');}
+  document.getElementById('cdDays').textContent=pad(d);
+  document.getElementById('cdHrs').textContent=pad(h);
+  document.getElementById('cdMin').textContent=pad(m);
+}
+window.onload=function(){
+  renderHomeProducts();
+  renderCarousel();
+  renderTestimonialsHome();
+  updateCountdown();
+  setInterval(updateCountdown,60000);
+  setTimeout(function(){document.getElementById('discountPopup').classList.add('open');},2500);
+};
+</script>
+</body>
+</html>
